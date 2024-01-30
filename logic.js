@@ -18,3 +18,16 @@ function convert(whichCase, text) {
   }
   return str;
 }
+
+function copy(text) {
+  navigator.clipboard.writeText(text).then(
+    () => {
+      console.log("Copied Successful!")
+      /* clipboard successfully set */
+    },
+    () => {
+      console.log("Failed Copy!")
+      /* clipboard write failed */
+    },
+  );
+}
