@@ -1,11 +1,9 @@
 function onClickBtn(text) {
-  var convertText = text;
   let output = document.getElementById('outputArea');
   const form = document.forms[0];
   const radio = form.elements['case'];
-  const whichCase = radio.value;
   console.log(radio.value);
-  const convertedTxt = convert(whichCase, convertText);
+  const convertedTxt = convert(radio.value, text);
   output.value = convertedTxt;
 }
 
@@ -20,13 +18,14 @@ function convert(whichCase, text) {
 }
 
 function copy(text) {
-  let tooltip = document.querySelector('.tooltip-text')
   navigator.clipboard.writeText(text).then(
     () => {
-      document.getElementById('tooltip-text').style.display = 'inline';
+      document.getElementById('tooltip-text').style.opacity = '1';
+      document.getElementById('tooltip-text').style.visibility = 'visible';
       console.log("Copied Successful!")
       setTimeout(() => {
-        document.getElementById('tooltip-text').style.display = 'none';
+        document.getElementById('tooltip-text').style.opacity = '0';
+        document.getElementById('tooltip-text').style.visibility = 'hidden';
       }, 2000);
     },
     () => {

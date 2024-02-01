@@ -19,7 +19,15 @@
       <h2>CaseConverter</h2>
     </div>
     <div class="container">
-      <textarea id="beforeConvert" class="beforeConvert" placeholder="Your Text Here🫰"></textarea>
+      <div class="beforeConvert">
+      <textarea id="inputText" placeholder="Your Text Here🫰"></textarea>
+      <button id="clear" name="tooltip" onclick="inputText.value=''">
+        <span id="trash">Delete</span>
+        <span class="material-symbols-outlined">
+          delete
+        </span>
+      </button>
+    </div>
       <!-- 変換形式 -->
       <div class="formArea">
         <form>
@@ -38,7 +46,7 @@
 
           </fieldset>
         </form>
-        <button class="convertBtn" onclick="onClickBtn(beforeConvert.value)">変換</button>
+        <button class="convertBtn" onclick="onClickBtn(inputText.value)">変換</button>
       </div>
       <!-- 出力 -->
       <div class="outputContainer">
