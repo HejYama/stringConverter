@@ -9,18 +9,22 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;800&display=swap" rel="stylesheet">
+  <title>CaseConverter</title>
 </head>
 
 <body>
-  <div class="container">
-    <textarea id="beforeConvert" class="beforeConvert"></textarea>
-    <!-- 変換形式 -->
-    <div class="formArea">
-      <form>
-        <fieldset>
-          <legend>Convert to... </legend>
+  <div class="AllContainer">
+    <div class="Logo">
+      <h2>CaseConverter</h2>
+    </div>
+    <div class="container">
+      <textarea id="beforeConvert" class="beforeConvert" placeholder="Your Text Here🫰"></textarea>
+      <!-- 変換形式 -->
+      <div class="formArea">
+        <form>
+          <fieldset>
+            <legend>Convert to... </legend>
 
           <div class="radioBtn">
             <input type="radio" id="camel" name="case" value="camel" checked />
@@ -32,20 +36,22 @@
             <label for="snake">sna_ke 🐍</label>
           </div>
 
-        </fieldset>
-      </form>
-      <button class="convertBtn" onclick="onClickBtn(beforeConvert.value)">変換</button>
+          </fieldset>
+        </form>
+        <button class="convertBtn" onclick="onClickBtn(beforeConvert.value)">変換</button>
+      </div>
+      <!-- 出力 -->
+      <div class="outputContainer">
+        <textarea type="text" id="outputArea" placeholder="Converted Text Gonna Output Here❤️‍🔥"></textarea>
+        <button id="clipBoard" class="tooltip" name="tooltip" onclick="copy(outputArea.value)">
+          <span id="tooltip-text">Copied!</span>
+          <span class="material-symbols-outlined">
+            content_copy
+          </span>
+        </button>
+      </div>
+      <script src="./logic.js"></script>
     </div>
-    <!-- 出力 -->
-    <div class="outputContainer">
-      <textarea type="text" id="outputArea"></textarea>
-      <button class="clipBoard" onclick="copy(outputArea.value)">
-        <span class="material-symbols-outlined">
-          content_copy
-        </span>
-      </button>
-    </div>
-    <script src="./logic.js"></script>
   </div>
 </body>
 

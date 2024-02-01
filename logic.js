@@ -20,14 +20,17 @@ function convert(whichCase, text) {
 }
 
 function copy(text) {
+  let tooltip = document.querySelector('.tooltip-text')
   navigator.clipboard.writeText(text).then(
     () => {
+      document.getElementById('tooltip-text').style.display = 'inline';
       console.log("Copied Successful!")
-      /* clipboard successfully set */
+      setTimeout(() => {
+        document.getElementById('tooltip-text').style.display = 'none';
+      }, 2000);
     },
     () => {
       console.log("Failed Copy!")
-      /* clipboard write failed */
     },
   );
 }
