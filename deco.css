@@ -195,8 +195,11 @@ textarea{
   'GRAD' 0,
   'opsz' 24
 }
-.material-symbols-outlined:hover {
+/* .material-symbols-outlined:hover {
   cursor:pointer;
+} */
+button:hover{
+  cursor: pointer;
 }
 .convertBtn {
   background-color: #fbeee0;
